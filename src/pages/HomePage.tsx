@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Gamepad2, Wrench, Sparkles, ArrowRight, Download, ExternalLink, Shield, Globe, Star, Play, Code, Flame, ChevronRight, Zap, Network, Layers } from 'lucide-react';
+import { Gamepad2, Wrench, Sparkles, ArrowRight, Download, ExternalLink, Shield, Globe, Star, Play, Code, Flame, ChevronRight, Zap, Network, Layers, Monitor, ChevronDown } from 'lucide-react';
 import { GAMES_CATALOG } from '../data/gamesData';
 import { STORE_ITEMS } from '../data/storeData';
 import { COMPANY_INFO, ECOSYSTEM_LINKS } from '../data/companyData';
@@ -10,244 +10,177 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
-  const heroStages = [
-    {
-      id: 'universe',
-      name: 'Studio Universe',
-      gameTitle: 'SG Games: Unleash The Legends',
-      genre: 'Grand Universe Key Visual',
-      badge: 'All Heroes',
-      image: '/assets/images/heroes/sggame_universe_hero.jpg',
-      quote: 'Where Eastern myth, tactical cyberpunk FPS, shadow shinobi, and enchanted worlds converge.',
-      rating: 4.9,
-      players: '100M+ Plays'
-    },
+  const characters = [
     {
       id: 'monkeyking',
       name: 'Sun Wukong',
-      gameTitle: 'Monkey King: Journey to the West',
-      genre: 'Action RPG / Fantasy',
-      badge: 'Mythic RPG',
-      image: '/assets/images/characters/monkey_king_hero.jpg',
-      quote: 'Master the 72 transformations and summon primordial celestial staff combos.',
-      rating: 4.8,
-      players: '5M+ Downloads'
+      title: 'Monkey King: Journey to the West',
+      genre: 'Action RPG',
+      badge: 'Mythic',
+      image: '/assets/images/characters/monkey_king_hero.jpg'
     },
     {
       id: 'botz',
-      name: 'V-01 Unit',
-      gameTitle: 'BotZ: Abandoned Dream',
-      genre: 'Cyberpunk FPS / Action',
-      badge: 'Sci-Fi FPS',
-      image: '/assets/images/characters/botz_hero.jpg',
-      quote: 'Tactical survival combat against rogue android legions in neo-dystopian ruins.',
-      rating: 4.6,
-      players: '2M+ Players'
+      name: 'V-01 Cyborg',
+      title: 'BotZ: Abandoned Dream',
+      genre: 'Cyberpunk FPS',
+      badge: 'Sci-Fi',
+      image: '/assets/images/characters/botz_hero.jpg'
     },
     {
       id: 'ninjadash',
-      name: 'Hayate',
-      gameTitle: 'Ninja Dash',
-      genre: 'Action Runner / Platformer',
-      badge: 'Arcade Hit',
-      image: '/assets/images/characters/ninja_dash_hero.jpg',
-      quote: 'Lightning-fast rooftop dashes with dual katana blade slashes under the full moon.',
-      rating: 4.6,
-      players: '3M+ Downloads'
+      name: 'Hayate Ninja',
+      title: 'Ninja Dash',
+      genre: 'Action Runner',
+      badge: 'Arcade',
+      image: '/assets/images/characters/ninja_dash_hero.jpg'
     },
     {
       id: 'hellwatch',
       name: 'Seraphina',
-      gameTitle: 'Hell Watch: Armageddon',
-      genre: 'Demon Defense / Shooter',
-      badge: 'Classic Defense',
-      image: '/assets/images/characters/hellwatch_hero.jpg',
-      quote: 'Defend humanity’s holy stronghold against cataclysmic underworld legions.',
-      rating: 4.5,
-      players: '1M+ Players'
+      title: 'Hell Watch: Armageddon',
+      genre: 'Tower Defense',
+      badge: 'Defense',
+      image: '/assets/images/characters/hellwatch_hero.jpg'
     },
     {
       id: 'fairytalerunner',
-      name: 'Luna',
-      gameTitle: 'Forest Fairy Runner',
+      name: 'Luna Fairy',
+      title: 'Forest Fairy Runner',
       genre: '3D Endless Runner',
-      badge: 'Family Favorite',
-      image: '/assets/images/characters/fairytale_runner_hero.jpg',
-      quote: 'Fly through enchanting enchanted forests with glowing wings and cute companion pets.',
-      rating: 4.7,
-      players: '2M+ Downloads'
+      badge: 'Family',
+      image: '/assets/images/characters/fairytale_runner_hero.jpg'
     },
     {
       id: 'snakesaga',
-      name: 'Cyberserpent',
-      gameTitle: 'Snake Saga',
-      genre: 'Cyber IO Battle Royale',
-      badge: 'Hot 2022',
-      image: '/assets/images/characters/snake_saga_hero.jpg',
-      quote: 'High-speed neon snake battle arena with electrifying powerups and dynamic trails.',
-      rating: 4.7,
-      players: '10M+ Downloads'
+      name: 'Cyber Snake',
+      title: 'Snake Saga',
+      genre: 'Cyber IO Arena',
+      badge: 'Battle IO',
+      image: '/assets/images/characters/snake_saga_hero.jpg'
+    },
+    {
+      id: 'witchmaze',
+      name: 'Apprentice Witch',
+      title: 'Witch Maze: Magic Puzzles',
+      genre: 'Puzzle Adventure',
+      badge: 'Logic',
+      image: '/assets/images/characters/witch_maze_hero.jpg'
     }
   ];
-
-  const [selectedHeroIndex, setSelectedHeroIndex] = useState(0);
-  const activeHero = heroStages[selectedHeroIndex];
 
   const featuredGames = GAMES_CATALOG.filter(g => g.featured);
 
   return (
     <div className="space-y-28">
-      {/* Immersive Panoramic Studio Universe Hero Section */}
-      <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden pt-8 pb-16">
-        {/* Dynamic Panoramic Background */}
+      {/* FULL-WIDTH Cinematic Studio Universe Hero Section */}
+      <section className="relative w-full min-h-[92vh] flex flex-col justify-between overflow-hidden pt-6 pb-12 bg-black">
+        {/* Edge-to-edge High-Res Universe Artwork */}
         <div className="absolute inset-0 -z-20 overflow-hidden">
           <img
-            src={activeHero.image}
-            alt={activeHero.name}
-            className="w-full h-full object-cover object-center filter brightness-45 blur-[2px] scale-105 transition-all duration-700"
+            src="/assets/images/heroes/sggame_universe_hero.jpg"
+            alt="SG Games Studio Universe - Unleash The Legends"
+            className="w-full h-full object-cover object-center filter brightness-90 transform scale-100 hover:scale-102 transition-transform duration-1000"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-base-100 via-base-100/75 to-base-100/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-base-100 via-base-100/60 to-transparent" />
+          {/* Subtle Top & Bottom Gradient Vignettes */}
+          <div className="absolute inset-0 bg-gradient-to-t from-base-100 via-base-100/30 to-base-100/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-base-100/80 via-transparent to-base-100/80" />
+          <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/20 to-black/70 pointer-events-none" />
         </div>
 
-        {/* Ambient Glow Orbs */}
-        <div className="absolute top-1/3 left-1/4 w-[550px] h-[350px] bg-primary/25 rounded-full blur-3xl -z-10 animate-glow pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 w-[450px] h-[350px] bg-secondary/20 rounded-full blur-3xl -z-10 animate-glow pointer-events-none" />
+        {/* Top Floating Badge */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-4 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 border border-cyan-400/40 text-cyan-300 text-xs sm:text-sm font-bold tracking-wider backdrop-blur-xl shadow-lg shadow-cyan-500/20">
+            <Flame className="w-4 h-4 text-warning animate-pulse" />
+            <span>100M+ GLOBAL GAME PLAYS • HANOI TO ATLANTA</span>
+          </div>
+        </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-6">
-            
-            {/* Left Col: Main Studio Brand & Active Hero Callout */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/20 border border-primary/40 text-primary text-xs font-bold tracking-wide backdrop-blur-md">
-                <Flame className="w-4 h-4 text-warning animate-pulse" />
-                <span>100M+ GLOBAL GAME PLAYS • HANOI TO ATLANTA</span>
-              </div>
+        {/* Center Main Universe Title & Call to Action */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center space-y-6 my-auto py-12">
+          <div className="space-y-3 max-w-4xl mx-auto">
+            <h1 className="font-heading font-black text-4xl sm:text-7xl lg:text-8xl tracking-tight text-white drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)] uppercase">
+              UNLEASH <br className="hidden sm:inline" />
+              <span className="bg-gradient-to-r from-amber-400 via-pink-500 to-cyan-400 bg-clip-text text-transparent">
+                THE LEGENDS
+              </span>
+            </h1>
 
-              <div className="space-y-3">
-                <h1 className="font-heading font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.05]">
-                  UNLEASH <br className="hidden sm:inline" />
-                  <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                    THE LEGENDS
-                  </span>
-                </h1>
+            <p className="text-base sm:text-2xl text-white/95 font-medium max-w-2xl mx-auto drop-shadow-md leading-relaxed">
+              Eastern mythic RPGs, tactical cyberpunk sci-fi, shadow ninja action, and creator tools crafted by <strong>SG Games</strong>.
+            </p>
+          </div>
 
-                <p className="text-base sm:text-xl text-white/85 max-w-xl font-medium leading-relaxed">
-                  Step into legendary mythic RPGs, high-tech tactical sci-fi shooters, and professional game creator tools crafted by SG Games.
-                </p>
-              </div>
+          {/* Action CTAs */}
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+            <button
+              onClick={() => onNavigate('games')}
+              className="btn btn-primary btn-lg shadow-2xl shadow-primary/50 rounded-2xl gap-2 font-bold px-8 text-base border border-white/20"
+            >
+              <Play className="w-5 h-5 fill-current" />
+              Explore All 15+ Games
+            </button>
 
-              {/* Active Hero Callout Card */}
-              <div className="p-4 sm:p-5 rounded-2xl glass-panel border border-white/10 max-w-xl space-y-2 text-left shadow-2xl">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="badge badge-primary font-bold text-xs">{activeHero.badge}</span>
-                    <span className="font-heading font-bold text-base sm:text-lg text-white">{activeHero.gameTitle}</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-warning text-xs font-bold">
-                    <Star className="w-3.5 h-3.5 fill-warning" />
-                    <span>{activeHero.rating}</span>
-                  </div>
-                </div>
+            <button
+              onClick={() => onNavigate('store')}
+              className="btn btn-secondary btn-lg shadow-2xl shadow-secondary/40 rounded-2xl gap-2 font-bold px-8 text-base border border-white/20"
+            >
+              <Wrench className="w-5 h-5" />
+              Developer Tools & Store
+            </button>
 
-                <p className="text-xs sm:text-sm text-white/75 italic">
-                  "{activeHero.quote}"
-                </p>
-              </div>
+            <a
+              href="https://github.com/SGGames/sggame-us-lp"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-ghost btn-lg bg-black/50 hover:bg-black/80 text-white gap-2 rounded-2xl text-sm font-bold border border-white/20 backdrop-blur-md"
+            >
+              <Code className="w-4 h-4 text-cyan-400" />
+              GitHub Repo
+            </a>
+          </div>
+        </div>
 
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                {activeHero.id === 'universe' ? (
-                  <button
-                    onClick={() => onNavigate('games')}
-                    className="btn btn-primary btn-lg shadow-xl shadow-primary/30 rounded-2xl gap-2 font-bold px-8"
-                  >
-                    <Play className="w-5 h-5 fill-current" />
-                    Explore Game Universe
-                  </button>
-                ) : (
-                  <button
-                    onClick={() => onNavigate(`games/${activeHero.id}`)}
-                    className="btn btn-primary btn-lg shadow-xl shadow-primary/30 rounded-2xl gap-2 font-bold px-8"
-                  >
-                    <Play className="w-5 h-5 fill-current" />
-                    Play & Explore Game
-                  </button>
-                )}
+        {/* Bottom Interactive Character Strip */}
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="p-3 sm:p-4 rounded-3xl bg-black/60 border border-white/15 backdrop-blur-xl shadow-2xl">
+            <div className="flex items-center justify-between px-2 mb-2">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-bold flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5" /> Iconic SG Universe Characters
+              </span>
+              <button onClick={() => onNavigate('games')} className="text-xs text-white/70 hover:text-white flex items-center gap-1">
+                View Full Catalog <ChevronRight className="w-3 h-3" />
+              </button>
+            </div>
 
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5">
+              {characters.map(char => (
                 <button
-                  onClick={() => onNavigate('games')}
-                  className="btn btn-outline btn-lg border-white/25 text-white hover:bg-white/10 rounded-2xl gap-2 font-bold px-6"
+                  key={char.id}
+                  onClick={() => onNavigate(`games/${char.id}`)}
+                  className="flex items-center gap-2.5 p-2 rounded-2xl bg-base-300/60 hover:bg-primary/20 border border-white/10 hover:border-primary/50 transition-all text-left group cursor-pointer"
                 >
-                  <Gamepad2 className="w-5 h-5" />
-                  All 15+ Games
+                  <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 border border-white/20 group-hover:scale-105 transition-transform">
+                    <img src={char.image} alt={char.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="overflow-hidden">
+                    <div className="text-xs font-bold text-white group-hover:text-primary transition-colors truncate">
+                      {char.name}
+                    </div>
+                    <div className="text-[10px] text-white/60 truncate font-mono">
+                      {char.genre}
+                    </div>
+                  </div>
                 </button>
-
-                <a
-                  href="https://github.com/SGGames/sggame-us-lp"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-ghost btn-lg text-white/80 hover:text-primary gap-2 rounded-2xl text-xs font-bold"
-                >
-                  <Code className="w-4 h-4 text-primary" />
-                  GitHub Repo
-                </a>
-              </div>
+              ))}
             </div>
-
-            {/* Right Col: Interactive Universe Stage */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 group aspect-[16/10] sm:aspect-[16/10] lg:aspect-[4/3] bg-base-300">
-                <img
-                  src={activeHero.image}
-                  alt={activeHero.name}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent flex flex-col justify-end p-6 sm:p-8">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="badge badge-accent font-bold text-xs">{activeHero.name}</span>
-                    <span className="font-mono text-xs text-white/80">{activeHero.players}</span>
-                  </div>
-                  <h3 className="font-heading font-black text-2xl sm:text-3xl text-white">
-                    {activeHero.gameTitle}
-                  </h3>
-                  <div className="flex items-center gap-2 mt-4">
-                    <button
-                      onClick={() => activeHero.id === 'universe' ? onNavigate('games') : onNavigate(`games/${activeHero.id}`)}
-                      className="btn btn-sm btn-primary rounded-xl font-bold gap-1 text-xs"
-                    >
-                      {activeHero.id === 'universe' ? 'View Universe' : 'View Details'} <ChevronRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Character / Universe Stage Switcher Thumbnails */}
-              <div className="flex items-center justify-center gap-2 mt-4 overflow-x-auto py-2">
-                {heroStages.map((stage, index) => (
-                  <button
-                    key={stage.id}
-                    onClick={() => setSelectedHeroIndex(index)}
-                    className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl overflow-hidden border-2 transition-all flex-shrink-0 cursor-pointer ${
-                      selectedHeroIndex === index
-                        ? 'border-primary scale-110 shadow-lg shadow-primary/40 ring-2 ring-primary/30'
-                        : 'border-white/20 opacity-60 hover:opacity-100 hover:scale-105'
-                    }`}
-                    title={stage.name}
-                  >
-                    <img src={stage.image} alt={stage.name} className="w-full h-full object-cover" />
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Sci-Fi Matrix Animated Telemetry Counter */}
-          <div className="mt-16 pt-8">
-            <SciFiMatrixCounter stats={COMPANY_INFO.stats} />
           </div>
         </div>
+      </section>
+
+      {/* Sci-Fi Matrix Animated Telemetry Counter */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SciFiMatrixCounter stats={COMPANY_INFO.stats} />
       </section>
 
       {/* Featured Games Showcase */}
