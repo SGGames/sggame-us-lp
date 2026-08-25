@@ -73,59 +73,43 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   return (
     <div className="space-y-28">
-      {/* FULL-WIDTH Cinematic Studio Universe Hero Section */}
-      <section className="relative w-full min-h-[92vh] flex flex-col justify-between overflow-hidden pt-6 pb-12 bg-black">
-        {/* Edge-to-edge High-Res Universe Artwork */}
-        <div className="absolute inset-0 -z-20 overflow-hidden">
-          <img
-            src="/assets/images/heroes/sggame_universe_hero.jpg"
-            alt="SG Games Studio Universe - Unleash The Legends"
-            className="w-full h-full object-cover object-center filter brightness-90 transform scale-100 hover:scale-102 transition-transform duration-1000"
-          />
-          {/* Subtle Top & Bottom Gradient Vignettes */}
-          <div className="absolute inset-0 bg-gradient-to-t from-base-100 via-base-100/30 to-base-100/60" />
-          <div className="absolute inset-0 bg-gradient-to-r from-base-100/80 via-transparent to-base-100/80" />
-          <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/20 to-black/70 pointer-events-none" />
-        </div>
+      {/* FULL-WIDTH Cinematic Studio Universe Hero Showcase */}
+      <section className="relative w-full pt-4 pb-12 overflow-hidden">
+        {/* Background ambient lighting */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-amber-500/20 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-        {/* Top Floating Badge */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-4 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 border border-cyan-400/40 text-cyan-300 text-xs sm:text-sm font-bold tracking-wider backdrop-blur-xl shadow-lg shadow-cyan-500/20">
+        {/* 1. Studio Header & Primary CTAs */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-base-200/80 border border-cyan-400/30 text-cyan-300 text-xs sm:text-sm font-bold tracking-wider backdrop-blur-xl shadow-lg">
             <Flame className="w-4 h-4 text-warning animate-pulse" />
             <span>100M+ GLOBAL GAME PLAYS • HANOI TO ATLANTA</span>
           </div>
-        </div>
 
-        {/* Center Main Universe Title & Call to Action */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center space-y-6 my-auto py-12">
-          <div className="space-y-3 max-w-4xl mx-auto">
-            <h1 className="font-heading font-black text-4xl sm:text-7xl lg:text-8xl tracking-tight text-white drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)] uppercase">
-              UNLEASH <br className="hidden sm:inline" />
-              <span className="bg-gradient-to-r from-amber-400 via-pink-500 to-cyan-400 bg-clip-text text-transparent">
-                THE LEGENDS
-              </span>
-            </h1>
+          <h1 className="font-heading font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white uppercase">
+            UNLEASH{' '}
+            <span className="bg-gradient-to-r from-amber-400 via-pink-500 to-cyan-400 bg-clip-text text-transparent">
+              THE LEGENDS
+            </span>
+          </h1>
 
-            <p className="text-base sm:text-2xl text-white/95 font-medium max-w-2xl mx-auto drop-shadow-md leading-relaxed">
-              Eastern mythic RPGs, tactical cyberpunk sci-fi, shadow ninja action, and creator tools crafted by <strong>SG Games</strong>.
-            </p>
-          </div>
+          <p className="text-sm sm:text-lg text-base-content/80 max-w-3xl mx-auto font-medium leading-relaxed">
+            Where Eastern mythic RPGs, tactical cyberpunk sci-fi, shadow shinobi, and enchanted worlds unite under <strong>SG Games Studio</strong>.
+          </p>
 
-          {/* Action CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
             <button
               onClick={() => onNavigate('games')}
-              className="btn btn-primary btn-lg shadow-2xl shadow-primary/50 rounded-2xl gap-2 font-bold px-8 text-base border border-white/20"
+              className="btn btn-primary btn-md sm:btn-lg shadow-xl shadow-primary/30 rounded-2xl gap-2 font-bold px-7 text-sm"
             >
-              <Play className="w-5 h-5 fill-current" />
+              <Play className="w-4 h-4 fill-current" />
               Explore All 15+ Games
             </button>
 
             <button
               onClick={() => onNavigate('store')}
-              className="btn btn-secondary btn-lg shadow-2xl shadow-secondary/40 rounded-2xl gap-2 font-bold px-8 text-base border border-white/20"
+              className="btn btn-secondary btn-md sm:btn-lg shadow-xl shadow-secondary/25 rounded-2xl gap-2 font-bold px-7 text-sm"
             >
-              <Wrench className="w-5 h-5" />
+              <Wrench className="w-4 h-4" />
               Developer Tools & Store
             </button>
 
@@ -133,23 +117,43 @@ export function HomePage({ onNavigate }: HomePageProps) {
               href="https://github.com/SGGames/sggame-us-lp"
               target="_blank"
               rel="noreferrer"
-              className="btn btn-ghost btn-lg bg-black/50 hover:bg-black/80 text-white gap-2 rounded-2xl text-sm font-bold border border-white/20 backdrop-blur-md"
+              className="btn btn-ghost btn-md sm:btn-lg bg-base-200/70 hover:bg-base-200 text-base-content gap-2 rounded-2xl text-xs font-bold border border-base-content/10"
             >
-              <Code className="w-4 h-4 text-cyan-400" />
+              <Code className="w-4 h-4 text-primary" />
               GitHub Repo
             </a>
           </div>
         </div>
 
-        {/* Bottom Interactive Character Strip */}
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-3 sm:p-4 rounded-3xl bg-black/60 border border-white/15 backdrop-blur-xl shadow-2xl">
+        {/* 2. Full-Width Panoramic Cinematic Stage (Unobstructed, 100% visible epic art) */}
+        <div className="w-full max-w-[1550px] mx-auto px-2 sm:px-4 lg:px-6">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-cyan-500/30 bg-black group aspect-[16/9] sm:aspect-[21/10] lg:aspect-[16/8]">
+            <img
+              src="/assets/images/heroes/sggame_universe_hero.jpg"
+              alt="SG Games Studio Universe - Unleash The Legends"
+              className="w-full h-full object-cover object-center transform scale-100 group-hover:scale-102 transition-transform duration-700 filter brightness-100 contrast-105"
+            />
+
+            {/* Subtle cinematic edge gradient only at the very bottom */}
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
+
+            {/* Floating Top-Right Live Badge */}
+            <div className="absolute top-4 right-4 z-10 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 text-xs text-white/90 font-mono">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              <span>OFFICIAL KEY VISUAL</span>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. Interactive Character Quick-Dock */}
+        <div className="w-full max-w-[1550px] mx-auto px-2 sm:px-4 lg:px-6 mt-4">
+          <div className="p-3 sm:p-4 rounded-2xl bg-base-200/80 border border-base-content/10 backdrop-blur-xl shadow-xl">
             <div className="flex items-center justify-between px-2 mb-2">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-bold flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5" /> Iconic SG Universe Characters
+              <span className="text-[11px] font-mono uppercase tracking-widest text-primary font-bold flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-warning" /> SG Studio Universe Characters
               </span>
-              <button onClick={() => onNavigate('games')} className="text-xs text-white/70 hover:text-white flex items-center gap-1">
-                View Full Catalog <ChevronRight className="w-3 h-3" />
+              <button onClick={() => onNavigate('games')} className="text-xs text-primary hover:underline flex items-center gap-1 font-semibold">
+                Browse Full Catalog <ChevronRight className="w-3 h-3" />
               </button>
             </div>
 
@@ -158,16 +162,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 <button
                   key={char.id}
                   onClick={() => onNavigate(`games/${char.id}`)}
-                  className="flex items-center gap-2.5 p-2 rounded-2xl bg-base-300/60 hover:bg-primary/20 border border-white/10 hover:border-primary/50 transition-all text-left group cursor-pointer"
+                  className="flex items-center gap-2.5 p-2 rounded-xl bg-base-300/60 hover:bg-primary/20 border border-base-content/5 hover:border-primary/50 transition-all text-left group cursor-pointer"
                 >
-                  <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 border border-white/20 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 border border-base-content/10 group-hover:scale-105 transition-transform bg-base-300">
                     <img src={char.image} alt={char.name} className="w-full h-full object-cover" />
                   </div>
                   <div className="overflow-hidden">
-                    <div className="text-xs font-bold text-white group-hover:text-primary transition-colors truncate">
+                    <div className="text-xs font-bold text-base-content group-hover:text-primary transition-colors truncate">
                       {char.name}
                     </div>
-                    <div className="text-[10px] text-white/60 truncate font-mono">
+                    <div className="text-[10px] text-base-content/60 truncate font-mono">
                       {char.genre}
                     </div>
                   </div>
@@ -178,7 +182,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      {/* Sci-Fi Matrix Animated Telemetry Counter */}
+      {/* Sci-Fi Matrix Animated Telemetry Counter with Pixel VFX */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SciFiMatrixCounter stats={COMPANY_INFO.stats} />
       </section>
