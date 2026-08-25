@@ -1,15 +1,27 @@
 import { useState } from 'react';
-import { Gamepad2, Wrench, Sparkles, ArrowRight, Download, ExternalLink, Shield, Globe, Star, Play, Code, Flame, ChevronRight, Zap } from 'lucide-react';
-import { GAMES_CATALOG, type GameItem } from '../data/gamesData';
+import { Gamepad2, Wrench, Sparkles, ArrowRight, Download, ExternalLink, Shield, Globe, Star, Play, Code, Flame, ChevronRight, Zap, Network, Layers } from 'lucide-react';
+import { GAMES_CATALOG } from '../data/gamesData';
 import { STORE_ITEMS } from '../data/storeData';
-import { COMPANY_INFO } from '../data/companyData';
+import { COMPANY_INFO, ECOSYSTEM_LINKS } from '../data/companyData';
+import { SciFiMatrixCounter } from '../components/SciFiMatrixCounter';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
-  const heroCharacters = [
+  const heroStages = [
+    {
+      id: 'universe',
+      name: 'Studio Universe',
+      gameTitle: 'SG Games: Unleash The Legends',
+      genre: 'Grand Universe Key Visual',
+      badge: 'All Heroes',
+      image: '/assets/images/heroes/sggame_universe_hero.jpg',
+      quote: 'Where Eastern myth, tactical cyberpunk FPS, shadow shinobi, and enchanted worlds converge.',
+      rating: 4.9,
+      players: '100M+ Plays'
+    },
     {
       id: 'monkeyking',
       name: 'Sun Wukong',
@@ -79,34 +91,33 @@ export function HomePage({ onNavigate }: HomePageProps) {
   ];
 
   const [selectedHeroIndex, setSelectedHeroIndex] = useState(0);
-  const activeChar = heroCharacters[selectedHeroIndex];
+  const activeHero = heroStages[selectedHeroIndex];
 
   const featuredGames = GAMES_CATALOG.filter(g => g.featured);
-  const featuredTools = STORE_ITEMS.filter(s => s.featured);
 
   return (
     <div className="space-y-28">
-      {/* Immersive Panoramic Studio Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-8 pb-16">
-        {/* Background Image with Dynamic Gradient Fades */}
+      {/* Immersive Panoramic Studio Universe Hero Section */}
+      <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden pt-8 pb-16">
+        {/* Dynamic Panoramic Background */}
         <div className="absolute inset-0 -z-20 overflow-hidden">
           <img
-            src={activeChar.image}
-            alt={activeChar.name}
-            className="w-full h-full object-cover object-center filter brightness-40 blur-[2px] scale-105 transition-all duration-700"
+            src={activeHero.image}
+            alt={activeHero.name}
+            className="w-full h-full object-cover object-center filter brightness-45 blur-[2px] scale-105 transition-all duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-base-100 via-base-100/75 to-base-100/40" />
           <div className="absolute inset-0 bg-gradient-to-r from-base-100 via-base-100/60 to-transparent" />
         </div>
 
         {/* Ambient Glow Orbs */}
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[300px] bg-primary/25 rounded-full blur-3xl -z-10 animate-glow pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 w-[400px] h-[300px] bg-secondary/20 rounded-full blur-3xl -z-10 animate-glow pointer-events-none" />
+        <div className="absolute top-1/3 left-1/4 w-[550px] h-[350px] bg-primary/25 rounded-full blur-3xl -z-10 animate-glow pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 w-[450px] h-[350px] bg-secondary/20 rounded-full blur-3xl -z-10 animate-glow pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-6">
             
-            {/* Left Col: Main Studio Brand & Selected Hero Spotlight */}
+            {/* Left Col: Main Studio Brand & Active Hero Callout */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/20 border border-primary/40 text-primary text-xs font-bold tracking-wide backdrop-blur-md">
                 <Flame className="w-4 h-4 text-warning animate-pulse" />
@@ -126,33 +137,43 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </p>
               </div>
 
-              {/* Active Character Spotlight Callout */}
-              <div className="p-4 sm:p-5 rounded-2xl glass-panel border border-white/10 max-w-xl space-y-2 text-left">
+              {/* Active Hero Callout Card */}
+              <div className="p-4 sm:p-5 rounded-2xl glass-panel border border-white/10 max-w-xl space-y-2 text-left shadow-2xl">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="badge badge-primary font-bold text-xs">{activeChar.badge}</span>
-                    <span className="font-heading font-bold text-base sm:text-lg text-white">{activeChar.gameTitle}</span>
+                    <span className="badge badge-primary font-bold text-xs">{activeHero.badge}</span>
+                    <span className="font-heading font-bold text-base sm:text-lg text-white">{activeHero.gameTitle}</span>
                   </div>
                   <div className="flex items-center gap-1 text-warning text-xs font-bold">
                     <Star className="w-3.5 h-3.5 fill-warning" />
-                    <span>{activeChar.rating}</span>
+                    <span>{activeHero.rating}</span>
                   </div>
                 </div>
 
                 <p className="text-xs sm:text-sm text-white/75 italic">
-                  "{activeChar.quote}"
+                  "{activeHero.quote}"
                 </p>
               </div>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                <button
-                  onClick={() => onNavigate(`games/${activeChar.id}`)}
-                  className="btn btn-primary btn-lg shadow-xl shadow-primary/30 rounded-2xl gap-2 font-bold px-8"
-                >
-                  <Play className="w-5 h-5 fill-current" />
-                  Play & Explore Game
-                </button>
+                {activeHero.id === 'universe' ? (
+                  <button
+                    onClick={() => onNavigate('games')}
+                    className="btn btn-primary btn-lg shadow-xl shadow-primary/30 rounded-2xl gap-2 font-bold px-8"
+                  >
+                    <Play className="w-5 h-5 fill-current" />
+                    Explore Game Universe
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => onNavigate(`games/${activeHero.id}`)}
+                    className="btn btn-primary btn-lg shadow-xl shadow-primary/30 rounded-2xl gap-2 font-bold px-8"
+                  >
+                    <Play className="w-5 h-5 fill-current" />
+                    Play & Explore Game
+                  </button>
+                )}
 
                 <button
                   onClick={() => onNavigate('games')}
@@ -163,73 +184,68 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </button>
 
                 <a
-                  href="https://github.com/sggames"
+                  href="https://github.com/SGGames/sggame-us-lp"
                   target="_blank"
                   rel="noreferrer"
                   className="btn btn-ghost btn-lg text-white/80 hover:text-primary gap-2 rounded-2xl text-xs font-bold"
                 >
                   <Code className="w-4 h-4 text-primary" />
-                  GitHub OpenSource
+                  GitHub Repo
                 </a>
               </div>
             </div>
 
-            {/* Right Col: Interactive Large Hero Stage */}
+            {/* Right Col: Interactive Universe Stage */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 group aspect-[4/3] sm:aspect-[16/10] lg:aspect-square bg-base-300">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 group aspect-[16/10] sm:aspect-[16/10] lg:aspect-[4/3] bg-base-300">
                 <img
-                  src={activeChar.image}
-                  alt={activeChar.name}
+                  src={activeHero.image}
+                  alt={activeHero.name}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 sm:p-8">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent flex flex-col justify-end p-6 sm:p-8">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="badge badge-accent font-bold text-xs">{activeChar.name}</span>
-                    <span className="font-mono text-xs text-white/80">{activeChar.players}</span>
+                    <span className="badge badge-accent font-bold text-xs">{activeHero.name}</span>
+                    <span className="font-mono text-xs text-white/80">{activeHero.players}</span>
                   </div>
                   <h3 className="font-heading font-black text-2xl sm:text-3xl text-white">
-                    {activeChar.gameTitle}
+                    {activeHero.gameTitle}
                   </h3>
                   <div className="flex items-center gap-2 mt-4">
                     <button
-                      onClick={() => onNavigate(`games/${activeChar.id}`)}
+                      onClick={() => activeHero.id === 'universe' ? onNavigate('games') : onNavigate(`games/${activeHero.id}`)}
                       className="btn btn-sm btn-primary rounded-xl font-bold gap-1 text-xs"
                     >
-                      View Details <ChevronRight className="w-3.5 h-3.5" />
+                      {activeHero.id === 'universe' ? 'View Universe' : 'View Details'} <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
                 </div>
               </div>
 
-              {/* Character Selector Thumbnails */}
-              <div className="flex items-center justify-center gap-2.5 mt-4 overflow-x-auto py-2">
-                {heroCharacters.map((char, index) => (
+              {/* Character / Universe Stage Switcher Thumbnails */}
+              <div className="flex items-center justify-center gap-2 mt-4 overflow-x-auto py-2">
+                {heroStages.map((stage, index) => (
                   <button
-                    key={char.id}
+                    key={stage.id}
                     onClick={() => setSelectedHeroIndex(index)}
-                    className={`relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 transition-all flex-shrink-0 cursor-pointer ${
+                    className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl overflow-hidden border-2 transition-all flex-shrink-0 cursor-pointer ${
                       selectedHeroIndex === index
                         ? 'border-primary scale-110 shadow-lg shadow-primary/40 ring-2 ring-primary/30'
                         : 'border-white/20 opacity-60 hover:opacity-100 hover:scale-105'
                     }`}
-                    title={char.name}
+                    title={stage.name}
                   >
-                    <img src={char.image} alt={char.name} className="w-full h-full object-cover" />
+                    <img src={stage.image} alt={stage.name} className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Quick Studio Numbers */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-16 pt-8 border-t border-white/10">
-            {COMPANY_INFO.stats.map(stat => (
-              <div key={stat.label} className="p-4 rounded-2xl bg-base-200/60 border border-white/5 backdrop-blur-md text-center">
-                <div className="font-heading font-black text-3xl text-primary">{stat.value}</div>
-                <div className="text-xs text-base-content/70 font-medium mt-0.5">{stat.label}</div>
-              </div>
-            ))}
+          {/* Sci-Fi Matrix Animated Telemetry Counter */}
+          <div className="mt-16 pt-8">
+            <SciFiMatrixCounter stats={COMPANY_INFO.stats} />
           </div>
         </div>
       </section>
@@ -240,7 +256,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div>
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-primary uppercase tracking-widest mb-2">
               <Gamepad2 className="w-4 h-4" />
-              <span>Full Indie Catalog</span>
+              <span>Game Catalog</span>
             </div>
             <h2 className="font-heading font-black text-3xl sm:text-5xl text-base-content tracking-tight">
               Featured Game Titles
@@ -308,6 +324,58 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </span>
               </div>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SG Gaming Ecosystem Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-accent uppercase tracking-widest">
+            <Network className="w-4 h-4" />
+            <span>Connected Studios & Brands</span>
+          </div>
+          <h2 className="font-heading font-black text-3xl sm:text-5xl text-base-content tracking-tight">
+            Our Global Ecosystem
+          </h2>
+          <p className="text-base text-base-content/70">
+            Explore our interconnected family of gaming studios, international operations, casual portals, and education networks.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {ECOSYSTEM_LINKS.map(eco => (
+            <a
+              key={eco.domain}
+              href={eco.url}
+              target="_blank"
+              rel="noreferrer"
+              className="p-6 rounded-3xl bg-base-200/60 hover:bg-base-200 border border-base-content/10 hover:border-primary/50 transition-all duration-300 group shadow-lg flex flex-col justify-between"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className={`badge badge-sm font-bold bg-gradient-to-r ${eco.color} border`}>
+                    {eco.badge}
+                  </span>
+                  <ExternalLink className="w-4 h-4 text-base-content/40 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                </div>
+
+                <div>
+                  <h3 className="font-heading font-bold text-lg text-base-content group-hover:text-primary transition-colors">
+                    {eco.name}
+                  </h3>
+                  <p className="text-xs font-mono text-primary font-medium">{eco.domain}</p>
+                </div>
+
+                <p className="text-xs text-base-content/70 leading-relaxed">
+                  {eco.description}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-base-content/5 mt-4 text-[11px] font-bold text-base-content/50 group-hover:text-primary flex items-center gap-1">
+                Visit {eco.domain} <ArrowRight className="w-3 h-3" />
+              </div>
+            </a>
           ))}
         </div>
       </section>

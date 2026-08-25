@@ -1,7 +1,7 @@
-import { Gamepad2, Wrench, Shield, Mail, MapPin, ExternalLink, Code } from 'lucide-react';
+import { Gamepad2, Wrench, Shield, Mail, MapPin, ExternalLink, Code, Network, Globe } from 'lucide-react';
 import { GAMES_CATALOG } from '../data/gamesData';
 import { STORE_ITEMS } from '../data/storeData';
-import { COMPANY_INFO } from '../data/companyData';
+import { COMPANY_INFO, ECOSYSTEM_LINKS } from '../data/companyData';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -39,15 +39,15 @@ export function Footer({ onNavigate }: FooterProps) {
               </span>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
-                href="https://github.com/sggames"
+                href="https://github.com/SGGames/sggame-us-lp"
                 target="_blank"
                 rel="noreferrer"
                 className="btn btn-xs btn-ghost gap-1.5 text-xs text-base-content/70 hover:text-primary"
               >
                 <Code className="w-3.5 h-3.5" />
-                <span>github.com/sggames</span>
+                <span>github.com/SGGames/sggame-us-lp</span>
                 <ExternalLink className="w-3 h-3 opacity-60" />
               </a>
               <a
@@ -88,21 +88,24 @@ export function Footer({ onNavigate }: FooterProps) {
             </ul>
           </div>
 
-          {/* Col 4: Dev Tools & Store */}
+          {/* Col 4: Studio Ecosystem */}
           <div className="space-y-3">
             <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-base-content/90 flex items-center gap-1.5">
-              <Wrench className="w-3.5 h-3.5 text-secondary" />
-              Dev Tools & Store
+              <Network className="w-3.5 h-3.5 text-secondary" />
+              Our Ecosystem
             </h4>
             <ul className="space-y-2 text-xs text-base-content/70">
-              {STORE_ITEMS.map(item => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => onNavigate(`store/${item.id}`)}
-                    className="hover:text-secondary transition-colors text-left"
+              {ECOSYSTEM_LINKS.map(eco => (
+                <li key={eco.domain}>
+                  <a
+                    href={eco.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-secondary transition-colors flex items-center justify-between group"
                   >
-                    {item.title}
-                  </button>
+                    <span>{eco.domain}</span>
+                    <span className="badge badge-ghost badge-xs text-[10px] opacity-70 group-hover:opacity-100">{eco.badge}</span>
+                  </a>
                 </li>
               ))}
               <li>
@@ -110,7 +113,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   href="https://github.com/sggames"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-secondary font-bold hover:underline flex items-center gap-1"
+                  className="text-secondary font-bold hover:underline flex items-center gap-1 pt-1"
                 >
                   <Code className="w-3.5 h-3.5" /> GitHub OpenSource ↗
                 </a>
@@ -163,8 +166,8 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] text-base-content/50 gap-4">
           <p>© 2015 – 2026 SG Games (sggame.us). All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <a href="https://github.com/sggames" target="_blank" rel="noreferrer" className="hover:text-primary flex items-center gap-1 font-semibold">
-              <Code className="w-3 h-3 text-primary" /> github.com/sggames
+            <a href="https://github.com/SGGames/sggame-us-lp" target="_blank" rel="noreferrer" className="hover:text-primary flex items-center gap-1 font-semibold">
+              <Code className="w-3 h-3 text-primary" /> github.com/SGGames/sggame-us-lp
             </a>
             <span>•</span>
             <p>Crafted with ❤️ for players & indie developers worldwide</p>

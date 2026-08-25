@@ -6,6 +6,15 @@ export interface Milestone {
   image?: string;
 }
 
+export interface EcosystemLink {
+  name: string;
+  domain: string;
+  url: string;
+  badge: string;
+  description: string;
+  color: string;
+}
+
 export interface PrivacyPolicyDoc {
   id: string;
   title: string;
@@ -15,15 +24,51 @@ export interface PrivacyPolicyDoc {
   contentHtml: string;
 }
 
+export const ECOSYSTEM_LINKS: EcosystemLink[] = [
+  {
+    name: 'SGM Hanoi',
+    domain: 'sgmhn.com',
+    url: 'https://sgmhn.com',
+    badge: 'Main Branch',
+    description: 'Core creative engineering & game development R&D studio in Hanoi, Vietnam.',
+    color: 'from-amber-500/20 to-orange-500/20 text-warning border-warning/30'
+  },
+  {
+    name: 'SGM Global',
+    domain: 'sgmgo.com',
+    url: 'https://sgmgo.com',
+    badge: 'Global HQ',
+    description: 'International operations, multi-platform publishing, and global growth in Atlanta.',
+    color: 'from-blue-500/20 to-indigo-500/20 text-info border-info/30'
+  },
+  {
+    name: 'GameMimo',
+    domain: 'gamemimo.com',
+    url: 'https://gamemimo.com',
+    badge: 'Casual Portal',
+    description: 'High-energy casual, party, and web-first arcade gaming destination.',
+    color: 'from-purple-500/20 to-pink-500/20 text-secondary border-secondary/30'
+  },
+  {
+    name: 'BinBon TV',
+    domain: 'binbontv.com',
+    url: 'https://binbontv.com',
+    badge: 'Kids & Education',
+    description: 'Family-friendly kids gaming network, interactive animations, and learning.',
+    color: 'from-emerald-500/20 to-teal-500/20 text-success border-success/30'
+  }
+];
+
 export const COMPANY_INFO = {
   name: 'SG Games',
   tagline: 'Bridging Innovation from Hanoi to Atlanta',
   establishedYear: '2015',
+  githubRepo: 'https://github.com/SGGames/sggame-us-lp',
   stats: [
-    { label: 'Global Player Plays', value: '100M+' },
-    { label: 'Published Titles', value: '15+' },
-    { label: 'Developer Tools', value: '3+' },
-    { label: 'Active Continents', value: '6' }
+    { label: 'Global Player Plays', targetNumber: 100, suffix: 'M+', value: '100M+' },
+    { label: 'Published Titles', targetNumber: 15, suffix: '+', value: '15+' },
+    { label: 'Developer Tools', targetNumber: 3, suffix: '+', value: '3+' },
+    { label: 'Active Continents', targetNumber: 6, suffix: '', value: '6' }
   ],
   locations: [
     {

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Gamepad2, Wrench, Info, Mail, Shield, Search, Moon, Sun, Menu, X, ChevronDown, Sparkles, Code } from 'lucide-react';
+import { Gamepad2, Wrench, Info, Mail, Shield, Search, Moon, Sun, Menu, X, ChevronDown, Sparkles, Code, Network, Globe } from 'lucide-react';
 import { GAMES_CATALOG } from '../data/gamesData';
 import { STORE_ITEMS } from '../data/storeData';
+import { ECOSYSTEM_LINKS } from '../data/companyData';
 
 export type PageId = 'home' | 'games' | 'store' | 'about' | 'contact' | 'privacy';
 
@@ -77,28 +78,37 @@ export function Navbar({ currentPage, onNavigate, onOpenSearch }: NavbarProps) {
             );
           })}
 
-          {/* Quick Dropdown for Games */}
+          {/* Quick Ecosystem & Games Dropdown */}
           <div className="dropdown dropdown-hover dropdown-end">
-            <div tabIndex={0} role="button" className="btn btn-sm btn-ghost btn-circle text-base-content/60 hover:text-base-content">
-              <ChevronDown className="w-4 h-4" />
+            <div tabIndex={0} role="button" className="btn btn-sm btn-ghost gap-1 text-base-content/70 hover:text-base-content">
+              <Network className="w-3.5 h-3.5 text-secondary" />
+              <span className="text-xs font-semibold">Ecosystem</span>
+              <ChevronDown className="w-3.5 h-3.5 opacity-70" />
             </div>
-            <ul tabIndex={0} className="dropdown-content z-50 menu p-2 shadow-2xl bg-base-200/95 backdrop-blur-xl rounded-box w-64 border border-base-content/10">
+            <ul tabIndex={0} className="dropdown-content z-50 menu p-3 shadow-2xl bg-base-200/95 backdrop-blur-xl rounded-2xl w-72 border border-base-content/10 space-y-1">
+              <li className="menu-title text-xs font-bold uppercase tracking-wider text-secondary flex items-center gap-1">
+                <Network className="w-3.5 h-3.5" /> SG Studio Ecosystem
+              </li>
+              {ECOSYSTEM_LINKS.map(eco => (
+                <li key={eco.domain}>
+                  <a href={eco.url} target="_blank" rel="noreferrer" className="flex items-center justify-between py-2 rounded-xl text-xs">
+                    <div>
+                      <div className="font-bold text-base-content">{eco.name}</div>
+                      <div className="text-[10px] text-base-content/50 font-mono">{eco.domain}</div>
+                    </div>
+                    <span className="badge badge-ghost badge-xs text-[10px]">{eco.badge}</span>
+                  </a>
+                </li>
+              ))}
+
+              <div className="divider my-1"></div>
+
               <li className="menu-title text-xs font-bold uppercase tracking-wider text-primary">Popular Games</li>
-              {GAMES_CATALOG.slice(0, 5).map(g => (
+              {GAMES_CATALOG.slice(0, 4).map(g => (
                 <li key={g.id}>
                   <button onClick={() => onNavigate(`games/${g.id}`)} className="text-xs flex items-center justify-between py-1.5">
                     <span>{g.title}</span>
                     <span className="badge badge-ghost badge-xs">{g.category}</span>
-                  </button>
-                </li>
-              ))}
-              <div className="divider my-1"></div>
-              <li className="menu-title text-xs font-bold uppercase tracking-wider text-secondary">Dev Tools</li>
-              {STORE_ITEMS.filter(i => i.type === 'tool').map(t => (
-                <li key={t.id}>
-                  <button onClick={() => onNavigate(`store/${t.id}`)} className="text-xs flex items-center justify-between py-1.5">
-                    <span>{t.title}</span>
-                    <span className="badge badge-outline badge-xs text-[10px]">VS Code</span>
                   </button>
                 </li>
               ))}
@@ -108,13 +118,13 @@ export function Navbar({ currentPage, onNavigate, onOpenSearch }: NavbarProps) {
 
         {/* Right Side Actions */}
         <div className="flex items-center gap-2">
-          {/* GitHub OpenSource Button */}
+          {/* GitHub Repo Button */}
           <a
-            href="https://github.com/sggames"
+            href="https://github.com/SGGames/sggame-us-lp"
             target="_blank"
             rel="noreferrer"
             className="btn btn-sm btn-ghost border border-base-content/15 rounded-xl gap-1.5 text-xs font-bold text-base-content/85 hover:text-primary hover:border-primary hidden sm:flex"
-            title="GitHub OpenSource @sggames"
+            title="GitHub Repository @SGGames/sggame-us-lp"
           >
             <Code className="w-3.5 h-3.5 text-primary" />
             <span>GitHub</span>
@@ -184,18 +194,35 @@ export function Navbar({ currentPage, onNavigate, onOpenSearch }: NavbarProps) {
 
           <div className="divider my-2"></div>
 
+          <p className="text-xs uppercase font-bold text-base-content/40 tracking-wider px-4 mb-1">Our Ecosystem</p>
+          <div className="grid grid-cols-2 gap-2 px-4 py-1">
+            {ECOSYSTEM_LINKS.map(eco => (
+              <a
+                key={eco.domain}
+                href={eco.url}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 rounded-xl bg-base-200 hover:bg-base-300 text-xs flex flex-col"
+              >
+                <span className="font-bold text-base-content">{eco.name}</span>
+                <span className="text-[10px] text-primary">{eco.domain}</span>
+              </a>
+            ))}
+          </div>
+
+          <div className="divider my-2"></div>
+
           <a
-            href="https://github.com/sggames"
+            href="https://github.com/SGGames/sggame-us-lp"
             target="_blank"
             rel="noreferrer"
             className="w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-semibold text-primary hover:bg-base-200"
           >
             <Code className="w-4 h-4" />
-            GitHub OpenSource (@sggames)
+            GitHub Repo (SGGames/sggame-us-lp)
           </a>
 
           <div className="px-4 py-1">
-            <p className="text-xs uppercase font-bold text-base-content/40 tracking-wider mb-2">Legal & Privacy</p>
             <button
               onClick={() => {
                 onNavigate('privacy');
