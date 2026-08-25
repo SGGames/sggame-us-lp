@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Gamepad2, Wrench, Info, Mail, Shield, Search, Moon, Sun, Menu, X, ChevronDown, Sparkles } from 'lucide-react';
+import { Gamepad2, Wrench, Info, Mail, Shield, Search, Moon, Sun, Menu, X, ChevronDown, Sparkles, Code } from 'lucide-react';
 import { GAMES_CATALOG } from '../data/gamesData';
 import { STORE_ITEMS } from '../data/storeData';
 
@@ -108,6 +108,19 @@ export function Navbar({ currentPage, onNavigate, onOpenSearch }: NavbarProps) {
 
         {/* Right Side Actions */}
         <div className="flex items-center gap-2">
+          {/* GitHub OpenSource Button */}
+          <a
+            href="https://github.com/sggames"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-sm btn-ghost border border-base-content/15 rounded-xl gap-1.5 text-xs font-bold text-base-content/85 hover:text-primary hover:border-primary hidden sm:flex"
+            title="GitHub OpenSource @sggames"
+          >
+            <Code className="w-3.5 h-3.5 text-primary" />
+            <span>GitHub</span>
+            <span className="badge badge-primary badge-xs text-[10px]">OSS</span>
+          </a>
+
           {/* Quick Search */}
           <button
             onClick={onOpenSearch}
@@ -170,6 +183,16 @@ export function Navbar({ currentPage, onNavigate, onOpenSearch }: NavbarProps) {
           })}
 
           <div className="divider my-2"></div>
+
+          <a
+            href="https://github.com/sggames"
+            target="_blank"
+            rel="noreferrer"
+            className="w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-semibold text-primary hover:bg-base-200"
+          >
+            <Code className="w-4 h-4" />
+            GitHub OpenSource (@sggames)
+          </a>
 
           <div className="px-4 py-1">
             <p className="text-xs uppercase font-bold text-base-content/40 tracking-wider mb-2">Legal & Privacy</p>

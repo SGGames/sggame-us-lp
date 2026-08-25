@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowLeft, Star, Download, ExternalLink, Shield, CheckCircle2, Globe, Smartphone, Monitor, Share2, Sparkles } from 'lucide-react';
+import { ArrowLeft, Star, Download, ExternalLink, Shield, CheckCircle2, Globe, Smartphone, Monitor, Share2, Sparkles, Flame, Play } from 'lucide-react';
 import { GAMES_CATALOG, type GameItem } from '../data/gamesData';
 
 interface GameDetailPageProps {
@@ -41,16 +41,16 @@ export function GameDetailPage({ gameId, onNavigate }: GameDetailPageProps) {
 
       {/* Main Game Hero Header */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-        {/* Left Gallery */}
+        {/* Left Gallery / Main Character Showcase */}
         <div className="lg:col-span-7 space-y-4">
-          <div className="rounded-3xl overflow-hidden border border-base-content/10 shadow-2xl bg-base-300 relative h-72 sm:h-96">
+          <div className="rounded-3xl overflow-hidden border border-base-content/15 shadow-2xl bg-base-300 relative h-80 sm:h-[450px]">
             <img
               src={activeImage}
               alt={game.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
             {game.badge && (
-              <span className="badge badge-primary font-bold absolute top-4 right-4 shadow-lg">
+              <span className="badge badge-primary font-bold absolute top-4 right-4 shadow-lg text-xs py-3 px-3">
                 {game.badge}
               </span>
             )}
@@ -63,8 +63,8 @@ export function GameDetailPage({ gameId, onNavigate }: GameDetailPageProps) {
                 <button
                   key={i}
                   onClick={() => setActiveImage(src)}
-                  className={`relative w-24 h-16 rounded-xl overflow-hidden border-2 transition-all flex-shrink-0 bg-base-300 ${
-                    activeImage === src ? 'border-primary scale-95 shadow-md shadow-primary/30' : 'border-transparent opacity-70 hover:opacity-100'
+                  className={`relative w-28 h-20 rounded-2xl overflow-hidden border-2 transition-all flex-shrink-0 bg-base-300 ${
+                    activeImage === src ? 'border-primary scale-95 shadow-md shadow-primary/30 ring-2 ring-primary/40' : 'border-transparent opacity-70 hover:opacity-100'
                   }`}
                 >
                   <img src={src} alt={`${game.title} preview ${i}`} className="w-full h-full object-cover" />
@@ -81,16 +81,16 @@ export function GameDetailPage({ gameId, onNavigate }: GameDetailPageProps) {
               <span className="badge badge-outline text-xs font-semibold">{game.genre}</span>
               <span className="badge badge-ghost text-xs font-mono">{game.releaseYear}</span>
             </div>
-            <h1 className="font-heading font-black text-3xl sm:text-4xl text-base-content leading-tight">
+            <h1 className="font-heading font-black text-3xl sm:text-5xl text-base-content leading-tight">
               {game.title}
             </h1>
             <p className="text-sm font-semibold text-primary">{game.subtitle}</p>
           </div>
 
           {/* Rating & Stats */}
-          <div className="flex items-center gap-6 py-3 border-y border-base-content/10">
-            <div className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-xl bg-warning/10 text-warning flex items-center justify-center font-bold">
+          <div className="flex items-center gap-6 py-4 border-y border-base-content/10">
+            <div className="flex items-center gap-2.5">
+              <div className="w-10 h-10 rounded-2xl bg-warning/10 text-warning flex items-center justify-center font-bold">
                 <Star className="w-5 h-5 fill-warning" />
               </div>
               <div>
@@ -119,11 +119,11 @@ export function GameDetailPage({ gameId, onNavigate }: GameDetailPageProps) {
                 href={game.googlePlayUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="btn btn-primary w-full rounded-xl font-bold gap-2 shadow-lg shadow-primary/20 text-sm"
+                className="btn btn-primary btn-lg w-full rounded-2xl font-bold gap-2 shadow-lg shadow-primary/20 text-sm"
               >
-                <Smartphone className="w-4 h-4" />
+                <Smartphone className="w-5 h-5" />
                 Find on Google Play Store
-                <ExternalLink className="w-3.5 h-3.5 ml-auto opacity-70" />
+                <ExternalLink className="w-4 h-4 ml-auto opacity-70" />
               </a>
             )}
 
@@ -140,13 +140,13 @@ export function GameDetailPage({ gameId, onNavigate }: GameDetailPageProps) {
       </div>
 
       {/* Game Features & Long Overview */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pt-8 border-t border-base-content/10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pt-10 border-t border-base-content/10">
         <div className="lg:col-span-8 space-y-6">
           <h2 className="font-heading font-bold text-2xl text-base-content flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-primary" />
             Gameplay Overview
           </h2>
-          <p className="text-sm text-base-content/80 leading-relaxed">
+          <p className="text-sm text-base-content/85 leading-relaxed">
             {game.longDescription}
           </p>
 
@@ -155,9 +155,9 @@ export function GameDetailPage({ gameId, onNavigate }: GameDetailPageProps) {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {game.features.map((feat, idx) => (
-              <div key={idx} className="p-3.5 rounded-xl bg-base-200/60 border border-base-content/5 flex items-start gap-2.5">
+              <div key={idx} className="p-4 rounded-2xl bg-base-200/60 border border-base-content/5 flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-xs text-base-content/85 leading-relaxed">{feat}</span>
+                <span className="text-xs text-base-content/85 leading-relaxed font-medium">{feat}</span>
               </div>
             ))}
           </div>
@@ -165,12 +165,12 @@ export function GameDetailPage({ gameId, onNavigate }: GameDetailPageProps) {
 
         {/* Technical Specs Card */}
         <div className="lg:col-span-4 space-y-4">
-          <div className="glass-panel rounded-2xl p-6 border border-base-content/10 space-y-4">
+          <div className="glass-panel rounded-3xl p-6 border border-base-content/10 space-y-4 shadow-xl">
             <h3 className="font-heading font-bold text-base text-base-content">
               Specifications
             </h3>
             
-            <div className="space-y-2.5 text-xs">
+            <div className="space-y-3 text-xs">
               <div className="flex justify-between py-1.5 border-b border-base-content/5">
                 <span className="text-base-content/50">Category</span>
                 <span className="font-semibold text-base-content capitalize">{game.category}</span>

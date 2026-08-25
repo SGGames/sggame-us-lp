@@ -8,6 +8,7 @@ export interface GameItem {
   badge?: string;
   featured?: boolean;
   coverImage: string;
+  characterArt?: string;
   screenshots: string[];
   description: string;
   longDescription: string;
@@ -31,13 +32,14 @@ export const GAMES_CATALOG: GameItem[] = [
     genre: 'Sci-Fi FPS / Action',
     category: 'action',
     releaseYear: '2020',
-    badge: 'Popular',
+    badge: 'Popular FPS',
     featured: true,
-    coverImage: '/assets/images/img_90532284.jpg',
+    coverImage: '/assets/images/characters/botz_hero.jpg',
+    characterArt: '/assets/images/characters/botz_hero.jpg',
     screenshots: [
+      '/assets/images/characters/botz_hero.jpg',
       '/assets/images/img_90532284.jpg',
-      '/assets/images/img_4258551.jpg',
-      '/assets/images/img_19511028.jpg'
+      '/assets/images/img_4258551.jpg'
     ],
     description: 'Immerse yourself in a dystopian sci-fi world where rogue cybernetic bots have overrun human sanctuaries. Fight for survival across futuristic ruins.',
     longDescription: 'BotZ: Abandoned Dream is a first-person tactical shooter featuring intense firefights, high-tech weapon customizations, responsive movement mechanics, and challenging bot AI. Navigate through destroyed urban sectors, secure energy cores, and uncover the secret behind the robotic revolt.',
@@ -63,11 +65,12 @@ export const GAMES_CATALOG: GameItem[] = [
     releaseYear: '2019',
     badge: 'Featured RPG',
     featured: true,
-    coverImage: '/assets/images/img_84443049.jpg',
+    coverImage: '/assets/images/characters/monkey_king_hero.jpg',
+    characterArt: '/assets/images/characters/monkey_king_hero.jpg',
     screenshots: [
+      '/assets/images/characters/monkey_king_hero.jpg',
       '/assets/images/img_84443049.jpg',
-      '/assets/images/img_70330619.jpg',
-      '/assets/images/img_37860198.jpg'
+      '/assets/images/img_70330619.jpg'
     ],
     description: 'Relive the legendary saga of Sun Wukong. Master the magical staff, shapeshift, summon mythical spells, and battle demons across mystical realms.',
     longDescription: 'Monkey King: Journey to the West is an action role-playing adventure based on classic mythology. Channel the supreme strength of the Great Sage Equal to Heaven, unleash combos with the Golden Cudgel, and unlock 72 transformations to conquer celestial bosses.',
@@ -85,16 +88,48 @@ export const GAMES_CATALOG: GameItem[] = [
     privacyPolicySlug: 'default'
   },
   {
+    id: 'ninjadash',
+    title: 'Ninja Dash',
+    subtitle: 'Fast-Paced Shadow Ninja Platformer & Runner',
+    genre: 'Action Runner / Platformer',
+    category: 'runner',
+    releaseYear: '2021',
+    badge: 'Top Runner',
+    featured: true,
+    coverImage: '/assets/images/characters/ninja_dash_hero.jpg',
+    characterArt: '/assets/images/characters/ninja_dash_hero.jpg',
+    screenshots: [
+      '/assets/images/characters/ninja_dash_hero.jpg',
+      '/assets/images/img_1362298.jpg',
+      '/assets/images/img_44228425.jpg'
+    ],
+    description: 'Sprint across moonlit rooftops, deflect shurikens, slice through enemy shinobi, and collect legendary scrolls in this adrenaline-pumping platformer.',
+    longDescription: 'Ninja Dash blends precision platforming with sword slashing mechanics. Dash across feudal Japan landscapes, execute air assassinations, and defeat evil clan masters.',
+    features: [
+      'Precision swipe and tap controls for jumps, wall runs, and strikes',
+      '8 unique ninja characters with special katana techniques',
+      'Boss battles against elemental samurai warlords',
+      'Also available as a complete Unity Game Template for creators'
+    ],
+    platforms: ['android', 'ios', 'web'],
+    rating: 4.6,
+    playersCount: '3M+ Downloads',
+    googlePlayUrl: 'https://play.google.com/store/apps/developer?id=SG+Games',
+    privacyPolicySlug: 'default'
+  },
+  {
     id: 'hellwatch',
     title: 'Hell Watch: Armageddon',
     subtitle: 'Demonic Wave Defense & Survival Action',
     genre: 'Action / Tower Defense Shooter',
     category: 'action',
     releaseYear: '2017',
-    badge: 'Classic',
+    badge: 'Classic Defense',
     featured: true,
-    coverImage: '/assets/images/img_5653269.jpg',
+    coverImage: '/assets/images/characters/hellwatch_hero.jpg',
+    characterArt: '/assets/images/characters/hellwatch_hero.jpg',
     screenshots: [
+      '/assets/images/characters/hellwatch_hero.jpg',
       '/assets/images/img_5653269.jpg',
       '/assets/images/img_4258551.jpg'
     ],
@@ -115,14 +150,16 @@ export const GAMES_CATALOG: GameItem[] = [
   {
     id: 'snakesaga',
     title: 'Snake Saga',
-    subtitle: 'Modern Multiplayer Snake Battle Royale',
+    subtitle: 'Modern Multiplayer Cyber Snake Battle Royale',
     genre: 'Arcade / Casual IO',
     category: 'arcade',
     releaseYear: '2022',
-    badge: 'Hot 2022',
+    badge: 'Hot Battle IO',
     featured: true,
-    coverImage: '/assets/images/img_19511028.jpg',
+    coverImage: '/assets/images/characters/snake_saga_hero.jpg',
+    characterArt: '/assets/images/characters/snake_saga_hero.jpg',
     screenshots: [
+      '/assets/images/characters/snake_saga_hero.jpg',
       '/assets/images/img_19511028.jpg',
       '/assets/images/img_28093794.jpg'
     ],
@@ -141,35 +178,6 @@ export const GAMES_CATALOG: GameItem[] = [
     privacyPolicySlug: 'snakesaga'
   },
   {
-    id: 'ninjadash',
-    title: 'Ninja Dash',
-    subtitle: 'Fast-Paced Shadow Ninja Platformer & Runner',
-    genre: 'Action Runner / Platformer',
-    category: 'runner',
-    releaseYear: '2021',
-    badge: 'Top Runner',
-    featured: true,
-    coverImage: '/assets/images/img_1362298.jpg',
-    screenshots: [
-      '/assets/images/img_1362298.jpg',
-      '/assets/images/img_27266689.png',
-      '/assets/images/img_44228425.jpg'
-    ],
-    description: 'Sprint across moonlit rooftops, deflect shurikens, slice through enemy shinobi, and collect legendary scrolls in this adrenaline-pumping platformer.',
-    longDescription: 'Ninja Dash blends precision platforming with sword slashing mechanics. Dash across feudal Japan landscapes, execute air assassinations, and defeat evil clan masters.',
-    features: [
-      'Precision swipe and tap controls for jumps, wall runs, and strikes',
-      '8 unique ninja characters with special katana techniques',
-      'Boss battles against elemental samurai warlords',
-      'Also available as a complete Unity Game Template for creators'
-    ],
-    platforms: ['android', 'ios', 'web'],
-    rating: 4.6,
-    playersCount: '3M+ Downloads',
-    googlePlayUrl: 'https://play.google.com/store/apps/developer?id=SG+Games',
-    privacyPolicySlug: 'default'
-  },
-  {
     id: 'fairytalerunner',
     title: 'Forest Fairy Runner',
     subtitle: 'Enchanted 3D Fantasy Endless Runner',
@@ -177,9 +185,11 @@ export const GAMES_CATALOG: GameItem[] = [
     category: 'runner',
     releaseYear: '2021',
     badge: 'Kids Choice',
-    featured: false,
-    coverImage: '/assets/images/img_27266689.png',
+    featured: true,
+    coverImage: '/assets/images/characters/fairytale_runner_hero.jpg',
+    characterArt: '/assets/images/characters/fairytale_runner_hero.jpg',
     screenshots: [
+      '/assets/images/characters/fairytale_runner_hero.jpg',
       '/assets/images/img_27266689.png',
       '/assets/images/img_32695895.jpg'
     ],
@@ -205,9 +215,11 @@ export const GAMES_CATALOG: GameItem[] = [
     category: 'puzzle',
     releaseYear: '2021',
     badge: 'Puzzle Master',
-    featured: false,
-    coverImage: '/assets/images/img_16879798.jpg',
+    featured: true,
+    coverImage: '/assets/images/characters/witch_maze_hero.jpg',
+    characterArt: '/assets/images/characters/witch_maze_hero.jpg',
     screenshots: [
+      '/assets/images/characters/witch_maze_hero.jpg',
       '/assets/images/img_16879798.jpg',
       '/assets/images/img_17998739.jpg'
     ],
@@ -415,8 +427,9 @@ export const GAMES_CATALOG: GameItem[] = [
     releaseYear: '2016',
     badge: 'Origins',
     featured: false,
-    coverImage: '/assets/images/img_84443049.jpg',
+    coverImage: '/assets/images/characters/monkey_king_hero.jpg',
     screenshots: [
+      '/assets/images/characters/monkey_king_hero.jpg',
       '/assets/images/img_84443049.jpg'
     ],
     description: 'The primordial conflict between dragons and ancient deities. Command divine warriors and summon elemental dragons in tactical skirmishes.',
