@@ -43,7 +43,7 @@ export function App() {
     }
     if (currentRoute.startsWith('games/')) {
       const gameId = currentRoute.replace('games/', '');
-      return <GameDetailPage gameId={gameId} onNavigate={handleNavigate} />;
+      return <GameDetailPage key={gameId} gameId={gameId} onNavigate={handleNavigate} />;
     }
     if (currentRoute === 'store') {
       return <StorePage onNavigate={handleNavigate} />;

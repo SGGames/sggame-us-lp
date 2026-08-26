@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowLeft, Star, Download, ExternalLink, Shield, CheckCircle2, Globe, Smartphone, Monitor, Share2, Sparkles, Flame, Play } from 'lucide-react';
 import { GAMES_CATALOG, type GameItem } from '../data/gamesData';
 
@@ -11,6 +11,10 @@ export function GameDetailPage({ gameId, onNavigate }: GameDetailPageProps) {
   const game = GAMES_CATALOG.find(g => g.id === gameId) || GAMES_CATALOG[0];
   const [activeImage, setActiveImage] = useState<string>(game.coverImage);
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    setActiveImage(game.coverImage);
+  }, [game.id, game.coverImage]);
 
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href);
