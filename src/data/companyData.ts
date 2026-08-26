@@ -104,21 +104,21 @@ export const COMPANY_INFO = {
       title: 'Foundations in Hanoi',
       location: 'Hanoi, Vietnam',
       description: 'Founded in Hanoi with a player-first philosophy, producing innovative casual mobile games and interactive TV applications that reached millions of players.',
-      image: '/assets/images/img_24071913.png'
+      image: '/assets/images/company/img_24071913.png'
     },
     {
       year: '2019',
       title: 'Expanding to the USA',
       location: 'Los Angeles, California',
       description: 'Established presence in Los Angeles, California to integrate global entertainment storytelling into game design pipelines and scale mobile distribution.',
-      image: '/assets/images/img_19739504.png'
+      image: '/assets/images/company/img_19739504.png'
     },
     {
       year: '2020-2026',
       title: 'Atlanta Headquarters & Multi-Platform Growth',
       location: 'Atlanta, Georgia',
       description: 'Moved headquarters to Atlanta, Georgia. Scaling multi-platform indie releases across Google Play, Steam, and creating developer tools like SGG-SpriteEditor.',
-      image: '/assets/images/img_62703490.jpg'
+      image: '/assets/images/company/img_62703490.jpg'
     }
   ],
   pillars: [

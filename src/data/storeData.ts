@@ -30,9 +30,9 @@ export const STORE_ITEMS: StoreItem[] = [
     category: 'VS Code Extension / Game Dev Tool',
     badge: 'Official Extension',
     featured: true,
-    coverImage: '/assets/images/img_56981251.png',
+    coverImage: '/assets/images/tools/spriteeditor/sgg_spriteeditor_vscode.png',
     screenshots: [
-      '/assets/images/img_56981251.png'
+      '/assets/images/tools/spriteeditor/sgg_spriteeditor_vscode.png'
     ],
     description: 'Sgg-SpriteEditor brings a full sprite atlas editing environment into VS Code. Open any atlas file, see your sprites on a live canvas, manipulate frames visually, and export in the format your engine expects without leaving your editor.',
     longDescription: 'SGG-SpriteEditor eliminates the need for heavyweight external texture tools. Directly within VS Code, you can inspect atlas files, slice spritesheets, rename frames, remove greenscreens/chroma keys, auto-align bounding boxes, and export directly to Unity, Godot, LibGDX, Cocos, Phaser, or Web frameworks.',
@@ -67,9 +67,9 @@ export const STORE_ITEMS: StoreItem[] = [
     category: 'Game Dev Tool / Pipeline',
     badge: 'Pipeline Tool',
     featured: false,
-    coverImage: '/assets/images/img_56981251.png',
+    coverImage: '/assets/images/tools/spriteeditor/sgg_spriteeditor_vscode.png',
     screenshots: [
-      '/assets/images/img_56981251.png'
+      '/assets/images/tools/spriteeditor/sgg_spriteeditor_vscode.png'
     ],
     description: 'A specialized texture packing, channel-packing, and compression pipeline utility designed for optimizing 2D and 3D game assets.',
     longDescription: 'TextureEditor packs individual textures into efficient power-of-two atlases, combines metallic/roughness/ambient occlusion channels, and generates compressed formats (ASTC, ETC2, DXT, WebP) for lightning-fast GPU memory loading.',
@@ -93,9 +93,9 @@ export const STORE_ITEMS: StoreItem[] = [
     category: 'Game Dev Tool',
     badge: 'Animation',
     featured: false,
-    coverImage: '/assets/images/img_56981251.png',
+    coverImage: '/assets/images/tools/spriteeditor/sgg_spriteeditor_vscode.png',
     screenshots: [
-      '/assets/images/img_56981251.png'
+      '/assets/images/tools/spriteeditor/sgg_spriteeditor_vscode.png'
     ],
     description: 'Rapidly preview, organize, and export 2D sprite animations and timing sheets for indie games.',
     longDescription: 'AniGo is designed for 2D game artists who need rapid playback preview, onion skinning, hitbox definition, and event keyframe tagging on spritesheets.',
@@ -119,9 +119,9 @@ export const STORE_ITEMS: StoreItem[] = [
     category: 'Unity Game Template',
     badge: 'Unity Template',
     featured: true,
-    coverImage: '/assets/images/img_28529196.png',
+    coverImage: '/assets/images/tools/kartdash-unity/img_28529196.png',
     screenshots: [
-      '/assets/images/img_28529196.png'
+      '/assets/images/tools/kartdash-unity/img_28529196.png'
     ],
     description: 'Production-ready 3D Kart Racing project for Unity 2021. Features arcade vehicle physics, AI waypoint racers, drifting boost mechanics, missile powerups, and customizable tracks.',
     longDescription: 'KartDash-Unity is a full source code template containing everything required to launch a commercial 3D kart racer on Mobile, PC, or WebGL. Includes smooth arcade physics, item pick-ups (homing rockets, oil slicks, shields, speed turbos), smart AI opponents, checkpoint systems, and complete UI menus.',
@@ -150,10 +150,10 @@ export const STORE_ITEMS: StoreItem[] = [
     category: 'Unity Game Template',
     badge: 'Unity Template',
     featured: true,
-    coverImage: '/assets/images/img_44228425.jpg',
+    coverImage: '/assets/images/tools/ninjadash-unity/img_44228425.jpg',
     screenshots: [
-      '/assets/images/img_44228425.jpg',
-      '/assets/images/img_1362298.jpg'
+      '/assets/images/tools/ninjadash-unity/img_44228425.jpg',
+      '/assets/images/old/games/ninjadash/img_1362298.jpg'
     ],
     description: 'Fast-paced ninja action platformer and runner starter kit for Unity. Features swipe controls, wall running, slashing combat, procedural level generation, and monetization integrations.',
     longDescription: 'NinjaDash-Unity provides an end-to-end framework for action platform runners. Master double-jumping, shuriken throwing, sword slashing, and grappling hooks. Complete with sound effects, particle effects, shop system, and rewarded ad hooks.',
@@ -180,52 +180,55 @@ export const STORE_ITEMS: StoreItem[] = [
     category: 'Open Source Framework',
     badge: 'Open Source',
     featured: true,
-    coverImage: '/assets/images/img_56981251.png',
+    coverImage: '/assets/images/tools/spriteeditor/sgg_spriteeditor_vscode.png',
     screenshots: [
-      '/assets/images/img_56981251.png'
+      '/assets/images/tools/spriteeditor/sgg_spriteeditor_vscode.png'
     ],
-    description: 'A decoupled event-driven game framework providing clean managers for Audio, UI, State Machines, Object Pools, Save Data, and Network Sync.',
-    longDescription: 'AtomGameFramework helps indie developers build scalable games with clean architectural separation. Built with C# and TypeScript implementations, it eliminates boilerplate and standardizes game initialization, scene management, audio routing, and save state encryption.',
+    description: 'A modular, decoupling game framework providing event buses, object pooling, state machines, and audio managers for rapid prototype-to-production game development.',
+    longDescription: 'AtomGameFramework provides clean architecture patterns that scale from game jams to massive live-ops commercial releases. Keep gameplay logic decoupled, memory allocations near zero with high-performance pooling, and audio/UI systems cleanly event-driven.',
     features: [
-      { title: 'Event Bus & Messaging', description: 'Type-safe publish/subscribe messaging without strict couplings.' },
-      { title: 'High-Speed Object Pooling', description: 'Zero garbage-collection allocations during runtime combat.' },
-      { title: 'State Machine Engine', description: 'Hierarchical state machines for player states, enemies, and UI flows.' },
-      { title: 'Encrypted Save System', description: 'Cross-platform encrypted JSON and binary persistence.' }
+      { title: 'Type-Safe Event Aggregator', description: 'Publish/subscribe event messaging without hard component dependencies.' },
+      { title: 'Generic Object Pooling', description: 'Auto-expanding memory pools for projectiles, VFX, and audio clips.' },
+      { title: 'Hierarchical State Machine', description: 'Visual state transitions for player controllers, enemy AI, and game state loops.' },
+      { title: 'Cross-Engine Architecture', description: 'Clean C# standard architecture portable across Unity, Godot, and Monogame.' }
     ],
     specs: [
-      { label: 'Languages', value: 'C#, TypeScript, C++' },
-      { label: 'License', value: 'MIT Open Source' },
-      { label: 'Repository', value: 'GitHub / sggames' }
+      { label: 'Language', value: 'C# (.NET Standard 2.1)' },
+      { label: 'License', value: 'MIT License' },
+      { label: 'Repository', value: 'github.com/sggames/AtomGameFramework' }
     ],
     githubUrl: 'https://github.com/sggames',
-    price: 'Free (MIT)',
-    engine: 'Universal'
+    docsUrl: 'https://github.com/sggames',
+    price: 'Free / MIT',
+    engine: 'C# / Unity / Godot'
   },
   {
     id: 'sggamesdk-unity',
     type: 'opensource',
     title: 'SGGameSDK-Unity',
-    tagline: 'All-in-One Unity Utility, Analytics & Monetization SDK',
+    tagline: 'Cross-Platform Game Services & Monetization Toolkit',
     category: 'Open Source SDK',
     badge: 'Open Source',
     featured: false,
-    coverImage: '/assets/images/img_56981251.png',
+    coverImage: '/assets/images/tools/spriteeditor/sgg_spriteeditor_vscode.png',
     screenshots: [
-      '/assets/images/img_56981251.png'
+      '/assets/images/tools/spriteeditor/sgg_spriteeditor_vscode.png'
     ],
-    description: 'The internal core SDK used across all SGGame mobile and web titles for Ads mediation, cross-promotion, analytics, remote config, and cloud saves.',
-    longDescription: 'SGGameSDK streamlines publishing by providing unified abstractions for Google Play Games, Game Center, AdMob, AppLovin MAX, Firebase Analytics, and GDPR/CCPA privacy compliance.',
+    description: 'Unified wrapper for mobile analytics, in-app purchases, mediation ads, cloud saves, and GDPR consent management across Android and iOS.',
+    longDescription: 'SGGameSDK-Unity bundles production-proven monetization and compliance logic into a single plug-and-play package. Avoid dealing with disparate SDK APIs; use one unified interface for banners, interstitials, rewarded ads, app tracking transparency, and in-app receipt validation.',
     features: [
-      { title: 'Unified Ad Mediation', description: 'Single API for Banners, Interstitials, and Rewarded Videos.' },
-      { title: 'GDPR & Privacy Consent', description: 'Automatic consent dialogs complying with EU/US regulations.' },
-      { title: 'Cloud Save & Leaderboards', description: 'Cross-platform leaderboard and achievement synchronization.' }
+      { title: 'Unified Ads Mediation', description: 'Automated waterfall and bidding orchestration across Google AdMob, Unity Ads, and AppLovin.' },
+      { title: 'Cross-Platform IAP', description: 'Secure store receipt parsing, restore purchases, and consumable inventory tracking.' },
+      { title: 'Privacy & GDPR Consent', description: 'UMP consent dialog triggers and ATT prompt flows pre-configured.' }
     ],
     specs: [
-      { label: 'Platform', value: 'Unity Package (UPM)' },
-      { label: 'License', value: 'MIT Open Source' }
+      { label: 'Platforms', value: 'Android, iOS' },
+      { label: 'Unity Support', value: '2020.3, 2021.3, 2022.3, Unity 6' },
+      { label: 'License', value: 'MIT License' }
     ],
     githubUrl: 'https://github.com/sggames',
-    price: 'Free (MIT)',
+    docsUrl: 'https://github.com/sggames',
+    price: 'Free / MIT',
     engine: 'Unity'
   }
 ];

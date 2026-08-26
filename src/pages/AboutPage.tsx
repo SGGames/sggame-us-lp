@@ -37,13 +37,13 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             </p>
           </div>
           <div className="lg:col-span-6">
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-base-content/10 bg-base-300">
-              <img
-                src="/assets/images/img_55478654.jpg"
-                alt="SG Games Journey"
-                className="w-full h-auto object-cover"
-              />
-            </div>
+              <div className="rounded-3xl overflow-hidden border border-base-content/10 shadow-2xl bg-base-300">
+                <img
+                  src="/assets/images/company/img_55478654.jpg"
+                  alt="SG Games Founding Team"
+                  className="w-full h-80 object-cover"
+                />
+              </div>
           </div>
         </div>
       </div>

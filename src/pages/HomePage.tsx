@@ -393,7 +393,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <div className="lg:col-span-5">
                 <div className="rounded-2xl overflow-hidden border border-base-content/10 shadow-2xl bg-base-300">
                   <img
-                    src="/assets/images/img_56981251.png"
+                    src="/assets/images/tools/spriteeditor/sgg_spriteeditor_vscode.png"
                     alt="SGG-SpriteEditor Visual Studio Code Extension"
                     className="w-full h-auto object-cover"
                   />
@@ -466,10 +466,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           <div className="lg:col-span-6 grid grid-cols-2 gap-4">
             <div className="rounded-3xl overflow-hidden border border-base-content/10 shadow-xl bg-base-300">
-              <img src="/assets/images/img_55478654.jpg" alt="SG Games Studio Team" className="w-full h-56 sm:h-72 object-cover" />
+              <img src="/assets/images/company/img_55478654.jpg" alt="SG Games Studio Team" className="w-full h-56 sm:h-72 object-cover" />
             </div>
             <div className="rounded-3xl overflow-hidden border border-base-content/10 shadow-xl bg-base-300 mt-10">
-              <img src="/assets/images/img_62703490.jpg" alt="SG Games Studio Office" className="w-full h-56 sm:h-72 object-cover" />
+              <img src="/assets/images/company/img_62703490.jpg" alt="SG Games Studio Office" className="w-full h-56 sm:h-72 object-cover" />
             </div>
           </div>
         </div>
