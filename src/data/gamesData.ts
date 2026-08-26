@@ -34,12 +34,12 @@ export const GAMES_CATALOG: GameItem[] = [
     releaseYear: '2020',
     badge: 'Popular FPS',
     featured: true,
-    coverImage: '/assets/images/characters/botz_hero.jpg',
+    coverImage: '/assets/images/generated/botz_promo.jpg',
     characterArt: '/assets/images/characters/botz_hero.jpg',
     screenshots: [
       '/assets/images/generated/botz_promo.jpg',
       '/assets/images/generated/botz_gameplay.jpg',
-      '/assets/images/img_90532284.jpg'
+      '/assets/images/generated/botz_screenshot_1.jpg'
     ],
     description: 'Immerse yourself in a dystopian sci-fi world where rogue cybernetic bots have overrun human sanctuaries. Fight for survival across futuristic ruins.',
     longDescription: 'BotZ: Abandoned Dream is a first-person tactical shooter featuring intense firefights, high-tech weapon customizations, responsive movement mechanics, and challenging bot AI. Navigate through destroyed urban sectors, secure energy cores, and uncover the secret behind the robotic revolt.',
@@ -65,12 +65,12 @@ export const GAMES_CATALOG: GameItem[] = [
     releaseYear: '2019',
     badge: 'Featured RPG',
     featured: true,
-    coverImage: '/assets/images/characters/monkey_king_hero.jpg',
+    coverImage: '/assets/images/generated/monkeyking_promo.jpg',
     characterArt: '/assets/images/characters/monkey_king_hero.jpg',
     screenshots: [
       '/assets/images/generated/monkeyking_promo.jpg',
       '/assets/images/generated/monkeyking_gameplay.jpg',
-      '/assets/images/img_84443049.jpg'
+      '/assets/images/generated/monkeyking_screenshot_1.jpg'
     ],
     description: 'Relive the legendary saga of Sun Wukong. Master the magical staff, shapeshift, summon mythical spells, and battle demons across mystical realms.',
     longDescription: 'Monkey King: Journey to the West is an action role-playing adventure based on classic mythology. Channel the supreme strength of the Great Sage Equal to Heaven, unleash combos with the Golden Cudgel, and unlock 72 transformations to conquer celestial bosses.',
@@ -96,12 +96,12 @@ export const GAMES_CATALOG: GameItem[] = [
     releaseYear: '2021',
     badge: 'Top Runner',
     featured: true,
-    coverImage: '/assets/images/characters/ninja_dash_hero.jpg',
+    coverImage: '/assets/images/generated/ninjadash_promo.jpg',
     characterArt: '/assets/images/characters/ninja_dash_hero.jpg',
     screenshots: [
       '/assets/images/generated/ninjadash_promo.jpg',
       '/assets/images/generated/ninjadash_gameplay.jpg',
-      '/assets/images/img_1362298.jpg'
+      '/assets/images/generated/ninjadash_screenshot_1.jpg'
     ],
     description: 'Sprint across moonlit rooftops, deflect shurikens, slice through enemy shinobi, and collect legendary scrolls in this adrenaline-pumping platformer.',
     longDescription: 'Ninja Dash blends precision platforming with sword slashing mechanics. Dash across feudal Japan landscapes, execute air assassinations, and defeat evil clan masters.',
@@ -126,12 +126,12 @@ export const GAMES_CATALOG: GameItem[] = [
     releaseYear: '2017',
     badge: 'Classic Defense',
     featured: true,
-    coverImage: '/assets/images/characters/hellwatch_hero.jpg',
+    coverImage: '/assets/images/generated/hellwatch_promo.jpg',
     characterArt: '/assets/images/characters/hellwatch_hero.jpg',
     screenshots: [
       '/assets/images/generated/hellwatch_promo.jpg',
       '/assets/images/generated/hellwatch_gameplay.jpg',
-      '/assets/images/img_5653269.jpg'
+      '/assets/images/generated/hellwatch_screenshot_1.jpg'
     ],
     description: 'Hold the gates against hordes rising from the underworld. Deploy holy relics, heavy ballistas, and elemental magic to prevent Armageddon.',
     longDescription: 'Hell Watch combines frantic arcade shooting with strategic stronghold defense. Waves of hellspawn assault your sanctuary wall; equip arcane armaments and trigger cataclysmic powers before the demonic breach.',
@@ -156,12 +156,12 @@ export const GAMES_CATALOG: GameItem[] = [
     releaseYear: '2022',
     badge: 'Hot Battle IO',
     featured: true,
-    coverImage: '/assets/images/characters/snake_saga_hero.jpg',
+    coverImage: '/assets/images/generated/snakesaga_promo.jpg',
     characterArt: '/assets/images/characters/snake_saga_hero.jpg',
     screenshots: [
       '/assets/images/generated/snakesaga_promo.jpg',
       '/assets/images/generated/snakesaga_gameplay.jpg',
-      '/assets/images/img_19511028.jpg'
+      '/assets/images/generated/snakesaga_screenshot_1.jpg'
     ],
     description: 'The definitive next-generation Snake experience! Slither, trap opponents, gather glowing orbs, unlock flashy skins, and dominate the arena.',
     longDescription: 'Snake Saga modernizes the timeless arcade classic with ultra-smooth 60fps movement, vibrant particle physics, competitive online matchmaking, and customization options.',
@@ -186,12 +186,12 @@ export const GAMES_CATALOG: GameItem[] = [
     releaseYear: '2021',
     badge: 'Kids Choice',
     featured: true,
-    coverImage: '/assets/images/characters/fairytale_runner_hero.jpg',
+    coverImage: '/assets/images/generated/fairytalerunner_promo.jpg',
     characterArt: '/assets/images/characters/fairytale_runner_hero.jpg',
     screenshots: [
       '/assets/images/generated/fairytalerunner_promo.jpg',
       '/assets/images/generated/fairytalerunner_gameplay.jpg',
-      '/assets/images/img_27266689.png'
+      '/assets/images/generated/fairytalerunner_screenshot_1.jpg'
     ],
     description: 'Fly and run through magical enchanted forests, collect fairy dust crystals, avoid thorny traps, and unlock cute woodland fairy companions.',
     longDescription: 'Fairy Tale Runner takes players on a colorful fairy-tale journey through lush meadows, crystal caverns, and magical canopy villages.',
@@ -216,12 +216,12 @@ export const GAMES_CATALOG: GameItem[] = [
     releaseYear: '2021',
     badge: 'Puzzle Master',
     featured: true,
-    coverImage: '/assets/images/characters/witch_maze_hero.jpg',
+    coverImage: '/assets/images/generated/witchmaze_promo.jpg',
     characterArt: '/assets/images/characters/witch_maze_hero.jpg',
     screenshots: [
       '/assets/images/generated/witchmaze_promo.jpg',
       '/assets/images/generated/witchmaze_gameplay.jpg',
-      '/assets/images/img_16879798.jpg'
+      '/assets/images/generated/witchmaze_screenshot_1.jpg'
     ],
     description: 'Help the young apprentice witch navigate tricky magical labyrinths, brew secret potions, shift moving walls, and rescue captive familiars.',
     longDescription: 'Witch Maze challenges your spatial problem-solving with hundreds of hand-crafted puzzle mazes packed with teleporters, trap doors, potion cauldrons, and magical creatures.',
@@ -250,7 +250,7 @@ export const GAMES_CATALOG: GameItem[] = [
     screenshots: [
       '/assets/images/generated/monopoly_promo.jpg',
       '/assets/images/generated/monopoly_gameplay.jpg',
-      '/assets/images/img_16053595.png'
+      '/assets/images/generated/monopoly_screenshot_1.jpg'
     ],
     description: 'Roll the dice, buy world-famous landmarks from Paris to Tokyo, build luxury resorts, and become the world\'s greatest real estate tycoon.',
     longDescription: 'Monopoly: Around the World delivers quick-session family board game fun. Play against smart AI bots or pass-and-play with friends and family anywhere.',
@@ -279,7 +279,7 @@ export const GAMES_CATALOG: GameItem[] = [
     screenshots: [
       '/assets/images/generated/crazymotor_promo.jpg',
       '/assets/images/generated/crazymotor_gameplay.jpg',
-      '/assets/images/img_4258551.jpg'
+      '/assets/images/generated/crazymotor_screenshot_1.jpg'
     ],
     description: 'Weave through dense rush-hour traffic at breakneck speeds. Perform close-call near misses, boost your nitrous, and upgrade super-bikes.',
     longDescription: 'Crazy Motor provides adrenaline-fueled arcade bike racing with intuitive tilt and touch controls, diverse city highways, and customizable superbikes.',
@@ -307,7 +307,7 @@ export const GAMES_CATALOG: GameItem[] = [
     screenshots: [
       '/assets/images/generated/bugplanet_promo.jpg',
       '/assets/images/generated/bugplanet_gameplay.jpg',
-      '/assets/images/img_70330619.jpg'
+      '/assets/images/generated/bugplanet_screenshot_1.jpg'
     ],
     description: 'Defend humanity\'s frontier colonies from swarming alien insectoids with mech armor and heavy plasma artillery.',
     longDescription: 'Bug Planet drops you into the frontline against endless alien swarms. Blast arachnid warriors, giant acid spitters, and colossal hive queens across alien planets.',
@@ -335,7 +335,7 @@ export const GAMES_CATALOG: GameItem[] = [
     screenshots: [
       '/assets/images/generated/halloweennight_promo.jpg',
       '/assets/images/generated/halloweennight_gameplay.jpg',
-      '/assets/images/img_32695895.jpg'
+      '/assets/images/generated/halloweennight_screenshot_1.jpg'
     ],
     description: 'Celebrate Halloween with spooky puzzles, jack-o-lantern crafting, candy collection, and haunted house explorations.',
     longDescription: 'Halloween Night Out brings spooky fun for players of all ages with cute ghosts, pumpkin puzzles, and trick-or-treat surprises.',
@@ -362,7 +362,7 @@ export const GAMES_CATALOG: GameItem[] = [
     screenshots: [
       '/assets/images/generated/metalbro_promo.jpg',
       '/assets/images/generated/metalbro_gameplay.jpg',
-      '/assets/images/img_37860198.jpg'
+      '/assets/images/generated/metalbro_screenshot_1.jpg'
     ],
     description: 'A tribute to 90s classic run-and-gun platformers. Blast through mercenary bases with heavy machine guns, rocket launchers, and combat vehicles.',
     longDescription: 'Metal Bro delivers high-octane 2D side-scrolling action with pixel art explosions, tight gunplay, and screen-filling mechanical bosses.',
@@ -389,7 +389,7 @@ export const GAMES_CATALOG: GameItem[] = [
     screenshots: [
       '/assets/images/generated/titanfallen_promo.jpg',
       '/assets/images/generated/titanfallen_gameplay.jpg',
-      '/assets/images/img_24919208.jpg'
+      '/assets/images/generated/titanfallen_screenshot_1.jpg'
     ],
     description: 'When ancient titans fall from the heavens, only the chosen warrior can claim their power to banish the encroaching shadow.',
     longDescription: 'Titan Fallen offers rich dungeon crawling, deep equipment crafting, and monumental boss fights against elemental colossi.',
@@ -416,7 +416,7 @@ export const GAMES_CATALOG: GameItem[] = [
     screenshots: [
       '/assets/images/generated/bombershowdown_promo.jpg',
       '/assets/images/generated/bombershowdown_gameplay.jpg',
-      '/assets/images/img_28093794.jpg'
+      '/assets/images/generated/bombershowdown_screenshot_1.jpg'
     ],
     description: 'Place bombs, blast obstacles, pick up firepower power-ups, and trap rival bombers in fast-paced arena showdowns.',
     longDescription: 'Bomber Showdown is the classic retro party battle revamped with fun characters, colorful maps, and multiplayer frenzy.',
@@ -443,7 +443,7 @@ export const GAMES_CATALOG: GameItem[] = [
     screenshots: [
       '/assets/images/generated/dragonsvsgods_promo.jpg',
       '/assets/images/generated/dragonsvsgods_gameplay.jpg',
-      '/assets/images/img_95451957.jpg'
+      '/assets/images/generated/dragonsvsgods_screenshot_1.jpg'
     ],
     description: 'The primordial conflict between dragons and ancient deities. Command divine warriors and summon elemental dragons in tactical skirmishes.',
     longDescription: 'Dragons Vs Gods (Long Than) honors ancient folklore through tactical combat, divine blessing systems, and legendary artifact forging.',
